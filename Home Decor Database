@@ -1,0 +1,48 @@
+/**Home_Decor:
+Throw pillow
+Wall art
+Area rug
+Decorative vase
+Table lamp
+Curtains
+Decorative tray
+Throw blanket
+Floor lamp
+Decorative bowl
+Candle holder
+Shag rug
+Pouf ottoman
+Wall mirror
+Decorative bookends**/
+
+CREATE TABLE Home_Decor 
+(ID INTEGER PRIMARY KEY,
+PRODUCT TEXT,
+CATEGORY TEXT,
+PRICE INTEGER,
+Rating INTEGER);
+
+
+INSERT INTO home_decor (id, product, category, price, rating)
+VALUES 
+(1, 'Throw pillow', 'Pillows', 19.99, 4.3),
+(2, 'Wall art', 'Art', 34.99, 4.2),
+(3, 'Area rug', 'Rugs', 89.99, 4.5),
+(4, 'Decorative vase', 'Vases', 25.50, 4.0),
+(5, 'Table lamp', 'Lamps', 49.99, 4.1),
+(6, 'Curtains', 'Window treatments', 29.99, 4.4),
+(7, 'Decorative tray', 'Trays', 12.99, 4.3),
+(8, 'Throw blanket', 'Blankets', 39.50, 4.2),
+(9, 'Floor lamp', 'Lamps', 89.75, 4.0),
+(10, 'Decorative bowl', 'Bowls', 18.99, 4.3),
+(11, 'Candle holder', 'Candles & holders', 16.99, 4.4),
+(12, 'Shag rug', 'Rugs', 129.99, 4.1),
+(13, 'Pouf ottoman', 'Ottomans & poufs', 69.99, 4.0),
+(14, 'Wall mirror', 'Mirrors', 57.99, 4.2),
+(15, 'Decorative bookends', 'Bookends', 24.50, 4.3);
+
+SELECT * FROM home_decor ORDER BY price ASC;
+
+SELECT category, SUM(price) as sum_price, AVG(rating) as avg_rating
+FROM home_decor
+GROUP BY category;
